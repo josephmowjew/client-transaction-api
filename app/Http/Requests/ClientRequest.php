@@ -30,7 +30,7 @@ class ClientRequest extends FormRequest
         ];
 
         if ($this->method() === 'PUT') {
-            $rules['email'] = 'required|email|unique:clients,email,' . $this->route('client');
+            $rules['email'] = 'required|email|unique:clients,email,' . $this->route('client')->id;
         }
 
         return $rules;

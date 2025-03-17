@@ -29,7 +29,8 @@ class ClientController extends Controller
 
     public function update(ClientRequest $request, Client $client)
     {
-        $client->update($request->validated());
+        $validatedData = $request->validated();
+        $client->update($validatedData);
         return new ClientResource($client);
     }
 
