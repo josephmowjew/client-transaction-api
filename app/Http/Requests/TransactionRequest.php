@@ -19,12 +19,12 @@ class TransactionRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            'amount' => 'required|numeric',
+            'amount' => 'required|numeric|min:0',
             'type' => 'required|in:credit,debit',
-            'description' => 'nullable|string',
+            'description' => 'required|string|max:255',
         ];
     }
 }
