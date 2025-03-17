@@ -234,6 +234,34 @@ curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" \
 http://127.0.0.1:8000/api/clients/1/transactions
 ```
 
+## API Documentation with Swagger
+
+This project includes Swagger documentation for easy API exploration and testing.
+
+### Accessing Swagger UI
+
+After starting the development server, you can access the Swagger UI at:
+```
+http://127.0.0.1:8000/api/documentation
+```
+
+The Swagger UI provides an interactive interface where you can:
+- View all available API endpoints
+- See request parameters and response formats
+- Test API endpoints directly from the browser
+- View models and schemas
+
+### Generating Swagger Documentation
+
+If you make changes to the API annotations, you can regenerate the Swagger documentation using:
+```bash
+php artisan l5-swagger:generate
+```
+
+The API is documented using OpenAPI annotations in the controller files. You can find examples of these annotations in:
+- `app/Http/Controllers/API/ClientController.php`
+- `app/Http/Controllers/API/TransactionController.php`
+
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
